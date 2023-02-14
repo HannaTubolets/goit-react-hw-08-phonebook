@@ -14,8 +14,6 @@ export class ContactForm extends Component {
     this.setState({
       [inputName]: inputValue,
     });
-    // const { name, value } = event.target;
-    // this.setState({ [name]: value });
   };
 
   onAddContact = event => {
