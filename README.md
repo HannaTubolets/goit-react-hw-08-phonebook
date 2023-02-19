@@ -1,4 +1,4 @@
-# Phonebook App
+# Phonebook App (Used react Hooks)
 Individual project for saving customers contacts.
 
 Phonebook application consists of a form and a list of contacts.
