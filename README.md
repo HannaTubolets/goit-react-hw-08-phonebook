@@ -1,5 +1,8 @@
-# Phonebook App (Used React Hooks)
+# Phonebook App
 Individual project for saving customers contacts.
+
+Added state management using the Redux Toolkit library.
+Used React Hooks.
 
 Phonebook application consists of a form and a list of contacts.
 Adding a contact name and displaying a list of contacts has been implemented. 
