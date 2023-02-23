@@ -1,21 +1,26 @@
 import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import storage from 'helpers/storage';
 import { nanoid } from 'nanoid';
 import { ContactList } from './ContactList/ContactList';
 import { ContactForm } from './ContactForm/ContactForm';
 import { Filter } from './Filter/Filter';
+import { addContact } from 'redux/contactsSlice';
+import { getContacts } from 'redux/selectors';
 
-const CONTACTS = [
-  { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
-  { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
-  { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
-  { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
-];
+// const CONTACTS = [
+//   { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
+//   { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
+//   { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
+//   { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
+// ];
 
 export function App() {
-  const [contacts, setContacts] = useState(
-    () => storage.load('contactsToLS') ?? CONTACTS
-  );
+  const dispatch = useDispatch();
+  const contacts = useSelector(getContacts);
+  // const [contacts, setContacts] = useState(
+  //   () => storage.load('contactsToLS') ?? CONTACTS
+  // );
   const [filter, setFilter] = useState('');
 
   useEffect(() => {
@@ -30,7 +35,8 @@ export function App() {
 
     contacts.some(cont => cont.name === contact.name)
       ? alert(`${contact.name} is already in contacts.`)
-      : setContacts(prevState => [finalContact, ...prevState]);
+      : // : setContacts(prevState => [finalContact, ...prevState]);
+        dispatch(addContact(finalContact));
   };
   console.log(contacts);
 
@@ -43,7 +49,7 @@ export function App() {
   console.log(getFilteredContacts());
 
   const handleDelete = event => {
-    setContacts(prevState => prevState.filter(contact => contact.id !== event));
+    // setContacts(prevState => prevState.filter(contact => contact.id !== event));
   };
 
   const handleFilter = event => {
