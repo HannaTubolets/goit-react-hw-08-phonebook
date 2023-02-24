@@ -1,7 +1,9 @@
-import PropTypes from 'prop-types';
+import { addFilter } from 'redux/filterSlice';
+import { useDispatch } from 'react-redux';
 import css from './Filter.module.css';
 
-export const Filter = ({ filter, onFilter }) => {
+export const Filter = () => {
+  const dispatch = useDispatch();
   return (
     <div>
       <label className={css.filterLabel}>Find contacts by Name</label>
@@ -10,14 +12,8 @@ export const Filter = ({ filter, onFilter }) => {
         type="text"
         name="filter"
         placeholder="Enter filter"
-        value={filter}
-        onChange={onFilter}
+        onChange={event => dispatch(addFilter(event.target.value))}
       />
     </div>
   );
-};
-
-Filter.propTypes = {
-  filter: PropTypes.string.isRequired,
-  onFilter: PropTypes.func,
 };
