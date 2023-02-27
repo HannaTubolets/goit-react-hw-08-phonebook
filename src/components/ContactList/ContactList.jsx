@@ -1,15 +1,26 @@
-import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import { getFilteredContacts } from 'redux/selectors';
-import { deleteContact } from 'redux/contactsSlice';
+import { getFilteredContacts, getIsLoading } from 'redux/selectors';
+import { deleteContact, getContacts } from 'redux/operations';
 import css from './ContactList.module.css';
+import { useEffect } from 'react';
+import { Loader } from 'components/Loader/Loader';
 
 export const ContactList = () => {
-  const contacts = useSelector(getFilteredContacts);
+  const isLoading = useSelector(getIsLoading);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getContacts());
+  }, [dispatch]);
+
+  const contacts = useSelector(getFilteredContacts);
+  const handleDelete = id => {
+    dispatch(deleteContact(id));
+  };
 
   return (
     <>
+      {isLoading && <Loader />}
       <div>
         <ul className={css.contactList}>
           {contacts.map(contact => (
@@ -19,7 +30,7 @@ export const ContactList = () => {
               <button
                 type="button"
                 className={css.btnItemDel}
-                onClick={() => dispatch(deleteContact(contact.id))}
+                onClick={() => handleDelete(contact.id)}
               >
                 Delete
               </button>
@@ -29,14 +40,4 @@ export const ContactList = () => {
       </div>
     </>
   );
-};
-
-ContactList.propTypes = {
-  contacts: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      number: PropTypes.string.isRequired,
-    })
-  ),
 };
