@@ -20,8 +20,8 @@ export const ContactList = () => {
 
   return (
     <>
-      {isLoading && <Loader />}
       <div>
+        {isLoading && <Loader />}
         <ul className={css.contactList}>
           {contacts.map(contact => (
             <li key={contact.id} className={css.contactItem}>

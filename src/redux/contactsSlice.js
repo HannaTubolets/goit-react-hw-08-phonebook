@@ -3,7 +3,7 @@ import { getContacts, addContact, deleteContact } from './operations';
 
 const initialState = {
   items: [],
-  isLoadind: false,
+  isLoading: false,
   error: null,
 };
 
@@ -13,39 +13,39 @@ const contactsSlice = createSlice({
 
   extraReducers: {
     [getContacts.pending]: state => {
-      state.isLoadind = true;
+      state.isLoading = true;
       state.error = null;
     },
     [getContacts.fulfilled]: (state, { payload }) => {
       state.items = [...payload].reverse();
-      state.isLoadind = false;
+      state.isLoading = false;
       console.log(payload);
     },
     [getContacts.rejected]: (state, { payload }) => {
       state.error = payload;
-      state.isLoadind = false;
+      state.isLoading = false;
     },
     [deleteContact.pending]: state => {
-      state.isLoadind = true;
+      state.isLoading = true;
     },
     [deleteContact.fulfilled]: (state, { payload }) => {
       state.items = state.items.filter(item => item.id !== payload.id);
-      state.isLoadind = false;
+      state.isLoading = false;
     },
     [deleteContact.rejected]: (state, { payload }) => {
       state.error = payload;
-      state.isLoadind = false;
+      state.isLoading = false;
     },
     [addContact.pending]: (state, { payload }) => {
-      state.isLoadind = true;
+      state.isLoading = true;
     },
     [addContact.fulfilled]: (state, { payload }) => {
       state.items = [payload, ...state.items];
-      state.isLoadind = false;
+      state.isLoading = false;
     },
     [addContact.rejected]: (state, { payload }) => {
       state.error = payload;
-      state.isLoadind = false;
+      state.isLoading = false;
     },
 
     //   reducers: {
