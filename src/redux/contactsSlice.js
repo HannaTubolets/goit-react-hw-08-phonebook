@@ -8,15 +8,13 @@ const initialState = {
 };
 
 const contactsSlice = createSlice({
-  // Ім'я слайсу
   name: 'contacts',
-  // Початковий стан редюсера слайсу
   initialState,
 
-  // Об'єкт редюсерів
   extraReducers: {
     [getContacts.pending]: state => {
       state.isLoadind = true;
+      state.error = null;
     },
     [getContacts.fulfilled]: (state, { payload }) => {
       state.items = [...payload].reverse();
@@ -61,7 +59,5 @@ const contactsSlice = createSlice({
   },
 });
 
-// // Генератори екшенів
 // export const { addContact, deleteContact } = contactsSlice.actions;
-// Редюсер слайсу
 export const contactsReducer = contactsSlice.reducer;

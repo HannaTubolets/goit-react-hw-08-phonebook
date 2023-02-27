@@ -7,8 +7,8 @@ const instance = axios.create({
 
 export const getContacts = createAsyncThunk('contacts/fetchAll', async () => {
   const { data } = await instance.get('/contacts');
-  //   return data;
-  console.log(data);
+  return data;
+  //   console.log(data);
 });
 
 export const addContact = createAsyncThunk('contacts/add', async contact => {

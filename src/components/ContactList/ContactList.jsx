@@ -7,13 +7,13 @@ import { Loader } from 'components/Loader/Loader';
 
 export const ContactList = () => {
   const isLoading = useSelector(getIsLoading);
+  const contacts = useSelector(getFilteredContacts);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getContacts());
   }, [dispatch]);
 
-  const contacts = useSelector(getFilteredContacts);
   const handleDelete = id => {
     dispatch(deleteContact(id));
   };
