@@ -1,17 +1,18 @@
-import { ContactList } from './ContactList/ContactList';
-import { ContactForm } from './ContactForm/ContactForm';
-import { Filter } from './Filter/Filter';
+import { Route, Routes, Navigate } from 'react-router-dom';
+import Navigation from './Navigation/Navigation';
+import LoginPage from 'pages/LoginPage/LoginPage';
+import RegistrationPage from 'pages/RegistrationPage/RegistrationPage';
+import ContactsPage from 'pages/ContactsPage/ContactsPage';
 
 export function App() {
   return (
-    <div>
-      <main>
-        <h1>Phonebook</h1>
-        <ContactForm />
-        <h2> Contacts</h2>
-        <Filter />
-        <ContactList />
-      </main>
-    </div>
+    <Routes>
+      <Route path="/" element={<Navigation />}>
+        <Route path="/register" element={<RegistrationPage />}></Route>
+        <Route path="/login" element={<LoginPage />}></Route>
+      </Route>
+      <Route path="/contacts" element={<ContactsPage />}></Route>
+      <Route path="*" element={<Navigate to="/" replace={true} />} />
+    </Routes>
   );
 }

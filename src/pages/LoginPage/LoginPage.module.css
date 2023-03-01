@@ -1,0 +1,46 @@
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.loginFormEmail,
+.loginFormPassword {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-bottom: 32px;
+  align-items: center;
+  font-size: large;
+  text-align: left;
+  border-radius: 4px;
+  padding: 0.5rem 15rem 0.5rem 1rem;
+}
+
+.loginFormLabel {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.loginFormBtn {
+  background-color: #1380ff;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  flex-grow: 1;
+  font-size: 16px;
+  height: 36px;
+  line-height: 20px;
+  width: 185px;
+  padding: 0 16px 0 16px;
+  cursor: pointer;
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.loginFormBtn:hover {
+  background-color: #3f96fa;
+}

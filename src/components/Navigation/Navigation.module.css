@@ -1,0 +1,61 @@
+.linksWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 320px;
+  justify-content: center;
+  padding: 24px 64px;
+  margin-top: 32px;
+  border-radius: 4px;
+  box-shadow: 0px 2px 16px 0px #ffffff80;
+}
+
+.logoWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  width: 100%;
+}
+
+.logoName {
+  font-weight: bold;
+  font-size: 32px;
+  /* color: #ffffff; */
+  color: #1380ff;
+}
+
+.logoDownTxt {
+  font-weight: 200;
+  font-size: 14px;
+  color: #ffff;
+  /* color: #f5e277; */
+}
+
+.linksList {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+}
+
+.navLink {
+  font-size: 18px;
+  color: #ffff;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navLink:hover {
+  color: #f5e277;
+}
+
+.heading {
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 40px;
+  text-align: center;
+}
