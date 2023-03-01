@@ -2,8 +2,10 @@
 
 Individual project for saving customers contacts.
 
-Added state management using the Redux Toolkit library. Used React Hooks. Added
-interaction with back-end to store contacts.
+Added state management using the Redux Toolkit library.
+Used React Hooks.
+Added interaction with back-end to store contacts.
+Added the ability to register, login and update the user, as well as work with a private collection of contacts.
 
 Phonebook application consists of a form and a list of contacts. Adding a
 contact name and displaying a list of contacts has been implemented. Application
