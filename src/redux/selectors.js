@@ -14,7 +14,3 @@ export const getFilteredContacts = createSelector(
 );
 
 export const getIsLoading = state => state.contacts.isLoading;
-export const selectStatus = state => state.user.status;
-export const selectUserData = state => state.user.userData;
-export const selectIsLoggedIn = state => state.user.isLoggedIn;
-export const selectAuthError = state => state.user.error;

@@ -11,8 +11,8 @@ const initialState = {
 const userSlice = createSlice({
   name: 'user',
   initialState,
-  extraReducers: bulder =>
-    bulder
+  extraReducers: builder =>
+    builder
       .addCase(register.fulfilled, (state, { payload }) => {
         state.user = payload.user;
         state.token = payload.token;

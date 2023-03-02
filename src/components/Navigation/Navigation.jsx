@@ -1,10 +1,21 @@
 import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
+// import { useAuth } from 'hooks/useAuth';
+// import { UserMenu } from 'components/UserMenu/UserMenu';
 import css from 'components/Navigation/Navigation.module.css';
 
-export default function Navigation() {
+export const Navigation = () => {
+  // const { isLoggedIn } = useAuth();
   return (
     <>
+      {/* return (
+      <div>
+        <NavLink to="/">Home</NavLink>
+        {isLoggedIn ? <AuthNav /> : <UserMenu />}
+        <Outlet />
+      </div>
+      ); */}
+
       <div className={css.linksWrapper}>
         <div className={css.logoWrapper}>
           <span className={css.logoName}>PhoneBook</span>
@@ -35,4 +46,6 @@ export default function Navigation() {
       <Outlet />
     </>
   );
-}
+};
+
+export default Navigation;
