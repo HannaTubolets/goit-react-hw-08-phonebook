@@ -1,50 +1,39 @@
-import React from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
-// import { useAuth } from 'hooks/useAuth';
-// import { UserMenu } from 'components/UserMenu/UserMenu';
-import css from 'components/Navigation/Navigation.module.css';
+import { NavLink } from 'react-router-dom';
+import { useAuth } from 'hooks/useAuth';
+import css from './Navigation.module.css';
 
 export const Navigation = () => {
-  // const { isLoggedIn } = useAuth();
-  return (
-    <>
-      {/* return (
-      <div>
-        <NavLink to="/">Home</NavLink>
-        {isLoggedIn ? <AuthNav /> : <UserMenu />}
-        <Outlet />
-      </div>
-      ); */}
+  const { isLoggedIn } = useAuth();
 
-      <div className={css.linksWrapper}>
-        <div className={css.logoWrapper}>
-          <span className={css.logoName}>PhoneBook</span>
-          <span className={css.logoDownTxt}>
-            Your personal contacs in one place
-          </span>
-        </div>
-        <ul className={css.linksList}>
-          <li className={css.navLink}>
-            <NavLink to="/contacts">Contacts</NavLink>
-          </li>
-          <li className={css.navLink}>
-            <NavLink to="register">Registration</NavLink>
-          </li>
-          <li className={css.navLink}>
-            <NavLink to="login">Login</NavLink>
-          </li>
-        </ul>
+  return (
+    <div className={css.navWrapper}>
+      <div className={css.logoWrapper}>
+        <span className={css.logoName}>PhoneBook</span>
+        <span className={css.logoDownTxt}>
+          Your best choice to arrange contacts
+        </span>
       </div>
-      {/* <h1 className={css.heading}>
-        Create your own contact list, keeping it always close at hand in a safe
-        place.
-      </h1>
-      <img
-        src="../../../public/images/contact-us.jpg"
-        alt="Laptop with contacts"
-      /> */}
-      <Outlet />
-    </>
+      <nav className={css.linksList}>
+        <NavLink
+          className={({ isActive }) =>
+            `${css.link} ${isActive ? css.active : ''}`
+          }
+          to="/"
+        >
+          Home
+        </NavLink>
+        {isLoggedIn && (
+          <NavLink
+            className={({ isActive }) =>
+              `${css.link} ${isActive ? css.active : ''}`
+            }
+            to="/contacts"
+          >
+            Contacts
+          </NavLink>
+        )}
+      </nav>
+    </div>
   );
 };
 

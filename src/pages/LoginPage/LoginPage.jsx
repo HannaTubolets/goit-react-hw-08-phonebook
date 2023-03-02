@@ -17,27 +17,29 @@ export const LoginPage = () => {
     event.target.reset();
   };
   return (
-    <form className={css.loginForm} onSubmit={handleSubmit}>
-      <label className={css.loginFormLabel}>Email </label>
-      <input
-        className={css.loginFormEmail}
-        type="email"
-        name="email"
-        placeholder="Enter your email"
-        autoComplete="on"
-      />
-      <label className={css.loginFormLabel}>Password</label>
-      <input
-        className={css.loginFormPassword}
-        type="password"
-        name="password"
-        placeholder="Enter your password"
-        autoComplete="on"
-      />
-      <button className={css.loginFormBtn} type="submit">
-        Submit
-      </button>
-    </form>
+    <div className={css.container}>
+      <form className={css.loginForm} onSubmit={handleSubmit}>
+        <label className={css.loginFormLabel}>Email </label>
+        <input
+          className={css.loginFormEmail}
+          type="email"
+          name="email"
+          placeholder="Enter your email"
+          autoComplete="on"
+        />
+        <label className={css.loginFormLabel}>Password</label>
+        <input
+          className={css.loginFormPassword}
+          type="password"
+          name="password"
+          placeholder="Enter your password"
+          autoComplete="on"
+        />
+        <button className={css.loginFormBtn} type="submit">
+          Submit
+        </button>
+      </form>
+    </div>
   );
 };
 

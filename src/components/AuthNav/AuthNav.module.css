@@ -6,28 +6,6 @@
   justify-content: center;
 }
 
-.logoWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  justify-content: center;
-  width: 100%;
-}
-
-.logoName {
-  font-weight: bold;
-  font-size: 32px;
-  /* color: #ffffff; */
-  color: #1380ff;
-}
-
-.logoDownTxt {
-  font-weight: 200;
-  font-size: 14px;
-  /* color: #ffff; */
-  color: #f5e277;
-}
-
 .linksList {
   display: flex;
   flex-direction: row;
