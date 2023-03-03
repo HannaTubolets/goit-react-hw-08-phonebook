@@ -26,6 +26,7 @@ export const LoginPage = () => {
           name="email"
           placeholder="Enter your email"
           autoComplete="on"
+          required
         />
         <label className={css.loginFormLabel}>Password</label>
         <input
@@ -34,6 +35,7 @@ export const LoginPage = () => {
           name="password"
           placeholder="Enter your password"
           autoComplete="on"
+          required
         />
         <button className={css.loginFormBtn} type="submit">
           Submit

@@ -10,5 +10,8 @@
 }
 
 .filterLabel {
+  display: block;
   margin-bottom: 8px;
+  width: 463px;
+  margin: 0 auto;
 }

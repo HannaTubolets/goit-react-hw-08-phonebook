@@ -16,6 +16,7 @@
 
 .link {
   font-size: 18px;
+  font-weight: 500;
   color: #ffff;
 
   transition-property: color;

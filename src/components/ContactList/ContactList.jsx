@@ -20,7 +20,7 @@ export const ContactList = () => {
 
   return (
     <>
-      <div>
+      <div className={css.contactListWrapper}>
         {isLoading && <Loader />}
         <ul className={css.contactList}>
           {contacts.map(contact => (

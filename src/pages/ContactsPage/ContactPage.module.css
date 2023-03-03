@@ -1,0 +1,10 @@
+.contactPageWrapper {
+  width: 960px;
+}
+
+.contactsWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  align-items: flex-start;
+}

@@ -1,3 +1,7 @@
+.container {
+  text-align: start;
+}
+
 .loginForm {
   display: flex;
   flex-direction: column;
@@ -21,6 +25,7 @@
 .loginFormLabel {
   font-size: 16px;
   margin-bottom: 8px;
+  width: 463px;
 }
 
 .loginFormBtn {

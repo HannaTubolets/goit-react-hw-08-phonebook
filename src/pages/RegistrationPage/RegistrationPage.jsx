@@ -27,6 +27,7 @@ export const RegistrationPage = () => {
         name="name"
         placeholder="Henry Cross"
         autoComplete="on"
+        required
       />
       <label className={css.loginFormLabel}>Email </label>
       <input
@@ -35,6 +36,7 @@ export const RegistrationPage = () => {
         name="email"
         placeholder="across@mail.com"
         autoComplete="on"
+        required
       />
       <label className={css.loginFormLabel}>Password</label>
       <input
@@ -43,6 +45,7 @@ export const RegistrationPage = () => {
         name="password"
         placeholder="examplepwd12345"
         autoComplete="on"
+        required
       />
       <button className={css.loginFormBtn} type="submit">
         Submit

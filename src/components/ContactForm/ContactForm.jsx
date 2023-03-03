@@ -49,7 +49,7 @@ export const ContactForm = () => {
 
   return (
     <form className={css.form} onSubmit={onAddContact}>
-      <label className={css.formLabel}>Name </label>
+      <label className={css.formLable}>Name </label>
       <input
         className={css.formName}
         type="text"
@@ -62,7 +62,7 @@ export const ContactForm = () => {
         onChange={handleInputChange}
         autoFocus="on"
       />
-      <label className={css.formLabel}>Number </label>
+      <label className={css.formLable}>Number </label>
       <input
         className={css.formNumber}
         type="tel"

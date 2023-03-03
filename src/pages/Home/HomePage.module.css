@@ -1,5 +1,29 @@
+.homeContainer {
+  display: flex;
+  gap: 24px;
+  flex-direction: row;
+  align-items: center;
+}
+
 .homeTitle {
-  font-weight: 400;
-  font-size: 16px;
-  text-align: center;
+  width: 450px;
+  font-weight: 600;
+  font-size: 32px;
+  margin-bottom: 24px;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.homeImg {
+  width: 450px;
+  margin: 0 auto;
+}
+
+.spanColor {
+  color: #ffc727;
+}
+
+.txt {
+  font-size: 24px;
+  line-height: 1.2;
 }
